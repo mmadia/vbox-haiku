@@ -36,6 +36,8 @@
 /*#  define CONFIG_BSD*/
 # elif defined(RT_OS_SOLARIS)
 #  define CONFIG_SOLARIS
+# elif defined(RT_OS_HAIKU)
+#  define CONFIG_HAIKU
 # else
 #  define HAVE_BYTESWAP_H 1
 # endif
