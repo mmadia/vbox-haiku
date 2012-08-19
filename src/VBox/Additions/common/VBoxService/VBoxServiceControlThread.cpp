@@ -652,8 +652,9 @@ static int VBoxServiceControlThreadProcLoop(PVBOXSERVICECTRLTHREAD pThread,
 
             if (RT_UNLIKELY(pThread->fShutdown))
                 break; /* We were asked to shutdown. */
-
+#ifndef RT_OS_HAIKU /* Workaround for bug in Haiku's poll(). see Haiku bug #7859 */
             continue;
+#endif
         }
 
 #if 0
